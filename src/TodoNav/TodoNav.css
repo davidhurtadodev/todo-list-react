@@ -1,0 +1,13 @@
+.container__status-navbar {
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
+}
+.todo-nav {
+  justify-content: center;
+  font-weight: bold;
+  color: var(--dark-grayisgh-blue-light);
+}
+.todo-nav__text {
+  cursor: pointer;
+}

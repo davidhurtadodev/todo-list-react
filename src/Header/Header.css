@@ -1,3 +1,14 @@
 .header {
   background-image: url(../assets/backgrounds/bg-mobile-light.jpg);
+  height: 200px;
+}
+.header__inner-wrapper {
+  display: flex;
+  padding: 3rem 1.2rem;
+}
+.header__title {
+  text-transform: uppercase;
+  color: var(--very-light-gray-light);
+  letter-spacing: 0.75rem;
+  margin: 0;
 }

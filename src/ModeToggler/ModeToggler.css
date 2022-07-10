@@ -1,0 +1,7 @@
+.mode-toggler {
+  margin: 0 0 0 auto;
+}
+
+.mode-toggler__img {
+  cursor: pointer;
+}
