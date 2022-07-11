@@ -4,7 +4,8 @@ import Header from './Header';
 import MainWrapper from './MainWrapper';
 import CreateTodo from './CreateTodo';
 import TodoList from './TodoList';
-import './Container/Container.css';
+import TodoListStatus from './TodoListStatus';
+
 import TodoNav from './TodoNav';
 
 function App(): JSX.Element {
@@ -14,6 +15,7 @@ function App(): JSX.Element {
       <MainWrapper>
         <CreateTodo />
         <TodoList />
+        <TodoListStatus />
         <TodoNav />
       </MainWrapper>
     </div>

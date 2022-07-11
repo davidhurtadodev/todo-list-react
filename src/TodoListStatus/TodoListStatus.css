@@ -1,0 +1,14 @@
+.todo-list-status {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+}
+
+.todo-list-status__left {
+  color: var(--dark-grayisgh-blue-light);
+}
+.todo-list-status__clear {
+  color: var(--dark-grayisgh-blue-light);
+}
