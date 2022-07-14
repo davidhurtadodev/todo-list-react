@@ -26,6 +26,7 @@ const App = (): JSX.Element => {
   const [newTodoText, setNewTodoText] = useState<string>('');
   const [todos, setTodos] =
     useState<{ text: string; completed: boolean }[]>(defaultTodos);
+  const [displayedTodos, setDisplayedTodos] = useState<string>('All');
 
   const completedTodos: number = todos.filter(
     (todo) => !!todo.completed
@@ -45,9 +46,16 @@ const App = (): JSX.Element => {
       <Header />
       <MainWrapper>
         <CreateTodo newTodoText={newTodoText} setNewTodoText={setNewTodoText} />
-        <TodoList todos={todos} completeTodos={completeTodos} />
-        <TodoListStatus uncompletedTodos={uncompletedTodos} />
-        <TodoNavMobile />
+        <TodoList
+          todos={todos}
+          completeTodos={completeTodos}
+          displayedTodos={displayedTodos}
+        />
+        <TodoListStatus
+          uncompletedTodos={uncompletedTodos}
+          setDisplayedTodos={setDisplayedTodos}
+        />
+        <TodoNavMobile setDisplayedTodos={setDisplayedTodos} />
       </MainWrapper>
     </div>
   );

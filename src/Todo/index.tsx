@@ -9,7 +9,6 @@ type todoProps = {
 };
 
 const Todo = ({ completed, text, completeTodos }: todoProps): JSX.Element => {
-  console.log(completed);
   return (
     <div className="container todo">
       <span

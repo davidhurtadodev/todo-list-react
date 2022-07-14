@@ -7,21 +7,39 @@ import './TodoList.css';
 
 // }
 
-const TodoList = ({ todos, completeTodos }: any): JSX.Element => {
+const TodoList = ({
+  todos,
+  completeTodos,
+  displayedTodos,
+}: any): JSX.Element => {
+  const filteredTodos = todos.filter((todo: any) => {
+    if (todo.completed === false && displayedTodos === 'Active') return todo;
+    else if (todo.completed === true && displayedTodos === 'Complete')
+      return todo;
+  });
+  console.log(filteredTodos);
+
   return (
     <div className="todo-list">
-      {/* <Todo todoText={'Lorem ipsum'} completed={false} />
-      <Todo todoText={'Lorem ipsum'} completed={false} />
-     <Todo todoText={'Lorem ipsum'} completed={false} /> */}
-      {todos.map(({ text, completed }: any) => {
-        return (
-          <Todo
-            text={text}
-            completed={completed}
-            completeTodos={completeTodos}
-          />
-        );
-      })}
+      {displayedTodos !== 'All'
+        ? filteredTodos.map(({ text, completed }: any) => {
+            return (
+              <Todo
+                text={text}
+                completed={completed}
+                completeTodos={completeTodos}
+              />
+            );
+          })
+        : todos.map(({ text, completed }: any) => {
+            return (
+              <Todo
+                text={text}
+                completed={completed}
+                completeTodos={completeTodos}
+              />
+            );
+          })}
     </div>
   );
 };
