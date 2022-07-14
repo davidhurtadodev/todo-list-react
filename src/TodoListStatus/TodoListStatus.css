@@ -12,3 +12,10 @@
 .todo-list-status__clear {
   color: var(--dark-grayisgh-blue-light);
 }
+
+@media only screen and (min-width: 992px) {
+  .container__status-navbar.hide-mobile {
+    display: flex !important;
+    width: 30%;
+  }
+}

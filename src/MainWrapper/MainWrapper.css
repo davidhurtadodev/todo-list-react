@@ -1,6 +1,6 @@
 .main-wrapper {
-  /* background-color: var(--very-light-grayish-blue-light); */
-  margin: 1.2rem;
+  margin: 1.2rem auto;
   position: relative;
   bottom: 110px;
+  max-width: 600px;
 }

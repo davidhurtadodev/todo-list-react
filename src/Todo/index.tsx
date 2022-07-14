@@ -4,16 +4,29 @@ import checkSvg from '../assets/icons/icon-check.svg';
 
 type todoProps = {
   completed: boolean;
-  todoText: string;
+  text: string;
+  completeTodos: any;
 };
 
-const Todo = ({ completed, todoText }: todoProps): JSX.Element => {
+const Todo = ({ completed, text, completeTodos }: todoProps): JSX.Element => {
+  console.log(completed);
   return (
     <div className="container todo">
-      <span className="container__check-circle">
-        <img src={checkSvg} className="check-circle__check" alt="" />
+      <span
+        onClick={() => completeTodos(text)}
+        className={
+          completed
+            ? 'container__check-circle container__check-circle--checked'
+            : 'container__check-circle'
+        }
+      >
+        {completed ? (
+          <img src={checkSvg} className="check-circle__check" alt="" />
+        ) : (
+          ''
+        )}
       </span>
-      <span className="todo__text">{todoText}</span>
+      <span className="todo__text">{text}</span>
     </div>
   );
 };

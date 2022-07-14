@@ -1,9 +1,9 @@
 import React from 'react';
-import './TodoNav.css';
+import './TodoNavMobile.css';
 
-const TodoNav = (): JSX.Element => {
+const TodoNavMobile = (): JSX.Element => {
   return (
-    <div className="container todo-nav">
+    <div className="container todo-nav hide-desktop">
       <span className="todo-nav__text hide-mobile">5 items left</span>
       <div className="container__status-navbar">
         <span className="todo-nav__text">All</span>
@@ -15,4 +15,4 @@ const TodoNav = (): JSX.Element => {
   );
 };
 
-export default TodoNav;
+export default TodoNavMobile;

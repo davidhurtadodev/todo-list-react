@@ -66,8 +66,9 @@ code {
     monospace;
 }
 .hide-mobile {
-  display: none;
+  display: none !important;
 }
+
 .container {
   background-color: var(--very-light-gray-light);
   display: flex;
@@ -78,15 +79,27 @@ code {
 .container__check-circle {
   width: 22px;
   height: 22px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: solid 1px var(--light-grayish-blue-light);
+  border-radius: 50%;
+  cursor: pointer;
+}
+.container__check-circle--checked {
   background-image: linear-gradient(
     135deg,
     hsl(192, 100%, 67%),
     hsl(280, 87%, 65%)
   );
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
+  outline: 0;
+}
+.container__check-circle:hover {
+  border-color: linear-gradient(
+    135deg,
+    hsl(192, 100%, 67%),
+    hsl(280, 87%, 65%)
+  );
 }
 .container--create {
   margin-bottom: 1rem;
@@ -98,4 +111,13 @@ code {
 
 .check-circle__check {
   width: 11px;
+}
+
+@media only screen and (min-width: 992px) {
+  .hide-desktop {
+    display: none !important;
+  }
+  .hide-mobile {
+    display: block !important;
+  }
 }
