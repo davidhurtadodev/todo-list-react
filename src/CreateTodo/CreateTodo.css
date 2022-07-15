@@ -1,3 +1,6 @@
+.create-todo {
+  border-radius: 7px;
+}
 .input--create {
   color: var(--dark-grayisgh-blue-light);
   margin-top: 3px;

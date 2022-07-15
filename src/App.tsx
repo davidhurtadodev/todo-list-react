@@ -54,6 +54,8 @@ const App = (): JSX.Element => {
         <TodoListStatus
           uncompletedTodos={uncompletedTodos}
           setDisplayedTodos={setDisplayedTodos}
+          todos={todos}
+          setTodos={setTodos}
         />
         <TodoNavMobile setDisplayedTodos={setDisplayedTodos} />
       </MainWrapper>

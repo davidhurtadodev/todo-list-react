@@ -74,7 +74,7 @@ code {
   display: flex;
   align-items: center;
   padding: 1rem;
-  border-radius: 7px;
+  /* border-radius: 7px; */
 }
 .container__check-circle {
   width: 22px;
