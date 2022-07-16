@@ -6,6 +6,7 @@ import CreateTodo from './CreateTodo';
 import TodoList from './TodoList';
 import TodoListStatus from './TodoListStatus';
 import TodoNavMobile from './TodoNavMobile';
+import TodoListDisplayOptions from './TodoListDisplayOptions';
 
 const defaultTodos: { text: string; completed: boolean }[] = [
   {
@@ -45,7 +46,12 @@ const App = (): JSX.Element => {
     <div className="App">
       <Header />
       <MainWrapper>
-        <CreateTodo newTodoText={newTodoText} setNewTodoText={setNewTodoText} />
+        <CreateTodo
+          newTodoText={newTodoText}
+          setNewTodoText={setNewTodoText}
+          todos={todos}
+          setTodos={setTodos}
+        />
         <TodoList
           todos={todos}
           completeTodos={completeTodos}
@@ -56,8 +62,14 @@ const App = (): JSX.Element => {
           setDisplayedTodos={setDisplayedTodos}
           todos={todos}
           setTodos={setTodos}
+          displayedTodos={displayedTodos}
         />
-        <TodoNavMobile setDisplayedTodos={setDisplayedTodos} />
+        <TodoListDisplayOptions
+          responsiveClass="hide-desktop"
+          displayedTodos={displayedTodos}
+          setDisplayedTodos={setDisplayedTodos}
+        />
+        {/* <TodoNavMobile setDisplayedTodos={setDisplayedTodos} /> */}
       </MainWrapper>
     </div>
   );

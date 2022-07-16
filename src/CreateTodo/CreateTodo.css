@@ -17,3 +17,6 @@
   font-size: 18px;
   color: var(--dark-grayisgh-blue-light);
 }
+.container__check-circle--create {
+  visibility: hidden;
+}

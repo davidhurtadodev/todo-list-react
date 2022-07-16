@@ -1,13 +1,9 @@
-import React, { FC } from 'react';
+import React from 'react';
 import ModeToggler from '../ModeToggler';
 
 import './Header.css';
 
-interface HeaderProps {
-  title: string;
-}
-
-const Header: FC = (): JSX.Element => {
+const Header = (): JSX.Element => {
   return (
     <header className="header">
       <div className="header__inner-wrapper">

@@ -1,16 +1,17 @@
 .container__status-navbar {
+  width: 60%;
   display: flex;
   justify-content: space-between;
-  border-radius: 7px;
 }
 .todo-nav {
   justify-content: center;
-  font-weight: bold;
-  color: var(--dark-grayisgh-blue-light);
+
   border-radius: 7px;
 }
 .todo-nav__text {
   cursor: pointer;
+  font-weight: bold;
+  color: var(--dark-grayisgh-blue-light);
 }
 .todo-nav__text--active {
   color: var(--bright-blue);

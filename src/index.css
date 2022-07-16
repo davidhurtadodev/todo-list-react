@@ -82,7 +82,7 @@ code {
   display: flex;
   justify-content: center;
   align-items: center;
-  outline: solid 1px var(--light-grayish-blue-light);
+  border: solid 1px var(--light-grayish-blue-light);
   border-radius: 50%;
   cursor: pointer;
 }
@@ -95,11 +95,13 @@ code {
   outline: 0;
 }
 .container__check-circle:hover {
-  border-color: linear-gradient(
-    135deg,
-    hsl(192, 100%, 67%),
-    hsl(280, 87%, 65%)
-  );
+  background: linear-gradient(
+        var(--very-light-gray-light),
+        var(--very-light-gray-light)
+      )
+      padding-box,
+    linear-gradient(135deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+  border: 1px solid transparent;
 }
 .container--create {
   margin-bottom: 1rem;

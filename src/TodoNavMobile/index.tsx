@@ -9,7 +9,7 @@ const TodoNavMobile = ({
   setDisplayedTodos,
 }: TodoNavMobileProps): JSX.Element => {
   return (
-    <div className="container todo-nav hide-desktop">
+    <div className="container container__status-navbar todo-nav hide-desktop">
       <span className="todo-nav__text hide-mobile">5 items left</span>
       <div className="container__status-navbar">
         <span
