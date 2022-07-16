@@ -12,7 +12,7 @@
 }
 .header__title {
   text-transform: uppercase;
-  color: var(--very-light-gray-light);
+  color: hsl(0, 0%, 98%);
   letter-spacing: 0.75rem;
   margin: 0;
 }
@@ -20,5 +20,16 @@
 @media only screen and (min-width: 992px) {
   .header {
     background-image: url(../assets/backgrounds/bg-desktop-light.jpg);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .header {
+    background-image: url(../assets/backgrounds/bg-mobile-dark.jpg);
+  }
+}
+@media (prefers-color-scheme: dark) and (min-width: 992px) {
+  .header {
+    background-image: url(../assets/backgrounds/bg-desktop-dark.jpg);
   }
 }

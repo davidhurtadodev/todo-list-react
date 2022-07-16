@@ -17,8 +17,27 @@
   --dark-grayish-blue-dark: hsl(234, 11%, 52%);
   --very-dark-grayish-blue-dark: hsl(233, 14%, 35%);
   --very-dark-grayish-blue: hsl(237, 14%, 26%);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --very-light-gray-light: var(--very-dark-desaturated-blue-dark);
+    --very-light-grayish-blue-light: var(--very-dark-blue-dark);
+    --light-grayish-blue-light: var(--very-dark-grayish-blue);
+    --dark-grayisgh-blue-light: var(--dark-grayish-blue-dark);
+    --very-dark-grayish-blue-light: var(--light-grayish-blue-dark);
+  }
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    --very-light-gray-light: var(--very-dark-desaturated-blue-dark);
+    --very-light-grayish-blue-light: var(--very-dark-blue-dark);
+    --light-grayish-blue-light: var(--very-dark-grayish-blue);
+    --dark-grayisgh-blue-light: var(--dark-grayish-blue-dark);
+    --very-dark-grayish-blue-light: var(--light-grayish-blue-dark);
+  }
+}
 
-  /* 
+/* 
   
   ## Colors
 
@@ -49,7 +68,7 @@
 
   
   */
-}
+
 * {
   font-family: 'Josefin Sans', sans-serif;
 }
