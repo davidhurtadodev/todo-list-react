@@ -17,8 +17,8 @@ const TodoListDisplayOptions = ({
       <span
         className={
           displayedTodos === 'All'
-            ? 'todo-nav__text todo-nav__text--active'
-            : 'todo-nav__text'
+            ? 'todo-nav__text todo-nav__text--left todo-nav__text--active'
+            : 'todo-nav__text todo-nav__text--left'
         }
         onClick={(e) =>
           setDisplayedTodos((e.target as HTMLElement).textContent)
@@ -41,8 +41,8 @@ const TodoListDisplayOptions = ({
       <span
         className={
           displayedTodos === 'Complete'
-            ? 'todo-nav__text todo-nav__text--active'
-            : 'todo-nav__text'
+            ? 'todo-nav__text todo-nav__text--right todo-nav__text--active'
+            : 'todo-nav__text todo-nav__text--right '
         }
         onClick={(e) =>
           setDisplayedTodos((e.target as HTMLElement).textContent)
