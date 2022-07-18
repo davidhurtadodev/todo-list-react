@@ -1,14 +1,6 @@
 import React, { useState } from 'react';
 import useLocalStorage from 'use-local-storage';
-import './App.css';
-import Header from './Header';
-import MainWrapper from './MainWrapper';
-import CreateTodo from './CreateTodo';
-import TodoList from './TodoList';
-import TodoListStatus from './TodoListStatus';
-import TodoNavMobile from './TodoNavMobile';
-import TodoListDisplayOptions from './TodoListDisplayOptions';
-//TODO Revisar colores dark mode
+import AppUI from './AppUI';
 
 const defaultTodos: { text: string; completed: boolean }[] = [
   {
@@ -51,34 +43,19 @@ const App = (): JSX.Element => {
   };
 
   return (
-    <div className="App" data-theme={theme}>
-      <Header theme={theme} setTheme={setTheme} />
-      <MainWrapper>
-        <CreateTodo
-          newTodoText={newTodoText}
-          setNewTodoText={setNewTodoText}
-          todos={todos}
-          setTodos={setTodos}
-        />
-        <TodoList
-          todos={todos}
-          completeTodos={completeTodos}
-          displayedTodos={displayedTodos}
-        />
-        <TodoListStatus
-          uncompletedTodos={uncompletedTodos}
-          setDisplayedTodos={setDisplayedTodos}
-          todos={todos}
-          setTodos={setTodos}
-          displayedTodos={displayedTodos}
-        />
-        <TodoListDisplayOptions
-          responsiveClass="hide-desktop"
-          displayedTodos={displayedTodos}
-          setDisplayedTodos={setDisplayedTodos}
-        />
-      </MainWrapper>
-    </div>
+    <AppUI
+      theme={theme}
+      setTheme={setTheme}
+      newTodoText={newTodoText}
+      displayedTodos={displayedTodos}
+      setDisplayedTodos={setDisplayedTodos}
+      completedTodos={completedTodos}
+      uncompletedTodos={uncompletedTodos}
+      completeTodos={completeTodos}
+      todos={todos}
+      setTodos={setTodos}
+      setNewTodoText={setNewTodoText}
+    />
   );
 };
 
