@@ -1,13 +1,17 @@
 .todo {
-  background-color: var(--very-light-gray-light);
-  border-bottom: solid 1px var(--light-grayish-blue-light);
+  background-color: var(--todo-background);
+  border-bottom: solid 1px var(--inactive-text);
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
   cursor: pointer;
 }
 .todo__text {
-  color: var(--very-dark-grayish-blue-light);
+  color: var(--accent-text);
   margin-top: 3px;
   margin-left: 12px;
   font-size: 18px;
+}
+.todo__text--completed {
+  text-decoration: line-through;
+  color: var(--inactive-text);
 }

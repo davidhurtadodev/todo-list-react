@@ -11,10 +11,15 @@
 .todo-nav__text {
   cursor: pointer;
   font-weight: bold;
-  color: var(--dark-grayisgh-blue-light);
+  color: var(--inactive-text);
+  font-size: 15px;
 }
+.todo-nav__text:hover {
+  color: var(--accent-text);
+}
+
 .todo-nav__text--active {
-  color: var(--bright-blue);
+  color: var(--active-text);
 }
 .todo-nav__text--left {
   margin: 0 auto 0 0;
@@ -25,5 +30,9 @@
 @media only screen and (min-width: 992px) {
   .container__status-navbar {
     width: 60%;
+  }
+  .container__status-navbar {
+    padding-top: 0;
+    padding-bottom: 0;
   }
 }

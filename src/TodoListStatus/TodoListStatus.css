@@ -7,10 +7,13 @@
 }
 
 .todo-list-status__left {
-  color: var(--dark-grayisgh-blue-light);
+  color: var(--inactive-text);
 }
 .todo-list-status__clear {
-  color: var(--dark-grayisgh-blue-light);
+  color: var(--inactive-text);
+}
+.todo-list-status__text {
+  font-size: 14px !important;
 }
 
 @media only screen and (min-width: 992px) {

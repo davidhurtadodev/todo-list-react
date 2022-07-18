@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import useLocalStorage from 'use-local-storage';
 import './App.css';
 import Header from './Header';
 import MainWrapper from './MainWrapper';
@@ -7,6 +8,7 @@ import TodoList from './TodoList';
 import TodoListStatus from './TodoListStatus';
 import TodoNavMobile from './TodoNavMobile';
 import TodoListDisplayOptions from './TodoListDisplayOptions';
+//TODO Revisar colores dark mode
 
 const defaultTodos: { text: string; completed: boolean }[] = [
   {
@@ -24,6 +26,12 @@ const defaultTodos: { text: string; completed: boolean }[] = [
 ];
 
 const App = (): JSX.Element => {
+  const defaultDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const [theme, setTheme] = useLocalStorage(
+    'theme',
+    defaultDark ? 'dark' : 'light'
+  );
+
   const [newTodoText, setNewTodoText] = useState<string>('');
   const [todos, setTodos] =
     useState<{ text: string; completed: boolean }[]>(defaultTodos);
@@ -43,8 +51,8 @@ const App = (): JSX.Element => {
   };
 
   return (
-    <div className="App">
-      <Header />
+    <div className="App" data-theme={theme}>
+      <Header theme={theme} setTheme={setTheme} />
       <MainWrapper>
         <CreateTodo
           newTodoText={newTodoText}
@@ -69,7 +77,6 @@ const App = (): JSX.Element => {
           displayedTodos={displayedTodos}
           setDisplayedTodos={setDisplayedTodos}
         />
-        {/* <TodoNavMobile setDisplayedTodos={setDisplayedTodos} /> */}
       </MainWrapper>
     </div>
   );

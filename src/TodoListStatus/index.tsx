@@ -1,6 +1,6 @@
 import React from 'react';
-import './TodoListStatus.css';
 import TodoListDisplayOptions from '../TodoListDisplayOptions';
+import './TodoListStatus.css';
 
 type TodoListStatusProps = {
   uncompletedTodos: number;
@@ -26,7 +26,9 @@ const TodoListStatus = ({
 
   return (
     <div className="container todo-list-status todo-list-status__left">
-      <span className="todo-nav__text ">{uncompletedTodos} items left</span>
+      <span className="todo-nav__text todo-list-status__text">
+        {uncompletedTodos} items left
+      </span>
       {/* <div className="container__status-navbar hide-mobile">
         <span
           className={
@@ -71,7 +73,7 @@ const TodoListStatus = ({
         setDisplayedTodos={setDisplayedTodos}
       />
       <span
-        className="todo-nav__text todo-list-status__clear"
+        className="todo-nav__text todo-list-status__text todo-list-status__clear"
         onClick={() => handleClearCompleted()}
       >
         Clear Completed

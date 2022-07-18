@@ -2,12 +2,12 @@
   border-radius: 7px;
 }
 .input--create {
-  color: var(--dark-grayisgh-blue-light);
+  color: var(--accent-text);
   margin-top: 3px;
   margin-left: 12px;
   font-size: 18px;
   border: 0;
-  background-color: var(--very-light-gray-light);
+  background-color: var(--todo-background);
 }
 .input--create:focus {
   outline: 0;
@@ -15,7 +15,7 @@
 
 .input--create::placeholder {
   font-size: 18px;
-  color: var(--dark-grayisgh-blue-light);
+  color: var(--inactive-text);
 }
 .container__check-circle--create {
   visibility: hidden;

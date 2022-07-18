@@ -25,7 +25,13 @@ const Todo = ({ completed, text, completeTodos }: todoProps): JSX.Element => {
           ''
         )}
       </span>
-      <span className="todo__text">{text}</span>
+      <span
+        className={
+          completed ? 'todo__text todo__text--completed' : 'todo__text'
+        }
+      >
+        {text}
+      </span>
     </div>
   );
 };

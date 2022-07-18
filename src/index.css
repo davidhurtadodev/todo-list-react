@@ -1,12 +1,12 @@
 :root {
-  --bright-blue: hsl(220, 98%, 61%);
+  --active-text: hsl(220, 98%, 61%);
 
   /* Light theme */
-  --very-light-gray-light: hsl(0, 0%, 98%);
-  --very-light-grayish-blue-light: hsl(236, 33%, 92%);
-  --light-grayish-blue-light: hsl(233, 11%, 84%);
-  --dark-grayisgh-blue-light: hsl(236, 9%, 61%);
-  --very-dark-grayish-blue-light: hsl(235, 19%, 35%);
+  --todo-background: hsl(0, 0%, 98%);
+  --background: hsl(236, 33%, 92%);
+  --separator-inactive-text: hsl(233, 11%, 84%);
+  --inactive-text: hsl(236, 9%, 61%);
+  --accent-text: hsl(235, 19%, 35%);
 
   /* Dark theme */
 
@@ -18,7 +18,14 @@
   --very-dark-grayish-blue-dark: hsl(233, 14%, 35%);
   --very-dark-grayish-blue: hsl(237, 14%, 26%);
 }
-@media (prefers-color-scheme: dark) {
+[data-theme='dark'] {
+  --todo-background: hsl(235, 24%, 19%);
+  --background: hsl(235, 21%, 11%);
+  --accent-text: hsl(234, 39%, 85%);
+  --separator-inactive-text: hsl(237, 14%, 26%);
+  --inactive-text: hsl(233, 14%, 35%);
+}
+/* @media (prefers-color-scheme: dark) {
   :root {
     --very-light-gray-light: var(--very-dark-desaturated-blue-dark);
     --very-light-grayish-blue-light: var(--very-dark-blue-dark);
@@ -27,6 +34,14 @@
     --very-dark-grayish-blue-light: var(--light-grayish-blue-dark);
   }
 }
+[color-scheme="dark"] {
+  --very-light-gray-light: var(--very-dark-desaturated-blue-dark);
+    --very-light-grayish-blue-light: var(--very-dark-blue-dark);
+    --light-grayish-blue-light: var(--very-dark-grayish-blue);
+    --dark-grayisgh-blue-light: var(--dark-grayish-blue-dark);
+    --very-dark-grayish-blue-light: var(--light-grayish-blue-dark);
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     --very-light-gray-light: var(--very-dark-desaturated-blue-dark);
@@ -36,6 +51,13 @@
     --very-dark-grayish-blue-light: var(--light-grayish-blue-dark);
   }
 }
+[color-scheme='light'] {
+  --very-light-gray-light: var(--very-dark-desaturated-blue-dark);
+  --very-light-grayish-blue-light: var(--very-dark-blue-dark);
+  --light-grayish-blue-light: var(--very-dark-grayish-blue);
+  --dark-grayisgh-blue-light: var(--dark-grayish-blue-dark);
+  --very-dark-grayish-blue-light: var(--light-grayish-blue-dark);
+} */
 
 /* 
   
@@ -89,7 +111,7 @@ code {
 }
 
 .container {
-  background-color: var(--very-light-gray-light);
+  background-color: var(--todo-background);
   display: flex;
   align-items: center;
   padding: 1rem;
@@ -101,7 +123,7 @@ code {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: solid 1px var(--light-grayish-blue-light);
+  border: solid 1px var(--separator-inactive-text);
   border-radius: 50%;
   cursor: pointer;
 }
@@ -114,10 +136,7 @@ code {
   outline: 0;
 }
 .container__check-circle:hover {
-  background: linear-gradient(
-        var(--very-light-gray-light),
-        var(--very-light-gray-light)
-      )
+  background: linear-gradient(var(--todo-background), var(--todo-background))
       padding-box,
     linear-gradient(135deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
   border: 1px solid transparent;
