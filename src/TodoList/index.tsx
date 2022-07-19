@@ -17,7 +17,6 @@ const TodoList = ({
     else if (todo.completed === true && displayedTodos === 'Complete')
       return todo;
   });
-  console.log(filteredTodos);
 
   return (
     <div className="todo-list">

@@ -2,20 +2,20 @@ import React, { useState } from 'react';
 import useLocalStorage from 'use-local-storage';
 import AppUI from './AppUI';
 
-const defaultTodos: { text: string; completed: boolean }[] = [
-  {
-    text: 'Cortar cebolla',
-    completed: false,
-  },
-  {
-    text: 'Dormir',
-    completed: false,
-  },
-  {
-    text: 'Volar',
-    completed: false,
-  },
-];
+// const defaultTodos: { text: string; completed: boolean }[] = [
+//   {
+//     text: 'Cortar cebolla',
+//     completed: false,
+//   },
+//   {
+//     text: 'Dormir',
+//     completed: false,
+//   },
+//   {
+//     text: 'Volar',
+//     completed: false,
+//   },
+// ];
 
 const App = (): JSX.Element => {
   const defaultDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -25,8 +25,9 @@ const App = (): JSX.Element => {
   );
 
   const [newTodoText, setNewTodoText] = useState<string>('');
-  const [todos, setTodos] =
-    useState<{ text: string; completed: boolean }[]>(defaultTodos);
+  const [todos, setTodos] = useLocalStorage<
+    { text: string; completed: boolean }[]
+  >('todos', []);
   const [displayedTodos, setDisplayedTodos] = useState<string>('All');
 
   const completedTodos: number = todos.filter(
