@@ -11,6 +11,8 @@ const TodoList = ({
   todos,
   completeTodos,
   displayedTodos,
+  filterCompletedTodos,
+  setTodos,
 }: any): JSX.Element => {
   const filteredTodos = todos.filter((todo: any) => {
     if (todo.completed === false && displayedTodos === 'Active') return todo;
@@ -27,6 +29,10 @@ const TodoList = ({
                 text={text}
                 completed={completed}
                 completeTodos={completeTodos}
+                filterCompletedTodos={filterCompletedTodos}
+                todos={todos}
+                key={text}
+                setTodos={setTodos}
               />
             );
           })
@@ -36,6 +42,10 @@ const TodoList = ({
                 text={text}
                 completed={completed}
                 completeTodos={completeTodos}
+                filterCompletedTodos={filterCompletedTodos}
+                todos={todos}
+                key={text}
+                setTodos={setTodos}
               />
             );
           })}

@@ -8,6 +8,7 @@ type TodoListStatusProps = {
   todos: { text: string; completed: boolean }[];
   setTodos: any;
   displayedTodos: string;
+  filterCompletedTodos: any;
 };
 
 const TodoListStatus = ({
@@ -16,12 +17,11 @@ const TodoListStatus = ({
   displayedTodos,
   todos,
   setTodos,
+  filterCompletedTodos,
 }: TodoListStatusProps): JSX.Element => {
   const handleClearCompleted = (): void => {
-    const filterCompletedTodos = todos.filter((todo) => {
-      if (!todo.completed) return todo;
-    });
-    setTodos(filterCompletedTodos);
+    const filteredCompletedTodos = filterCompletedTodos(todos);
+    setTodos(filteredCompletedTodos);
   };
 
   return (

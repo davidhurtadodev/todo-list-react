@@ -21,6 +21,10 @@
 .todo-nav__text--active {
   color: var(--active-text);
 }
+.todo-nav__text--active.todo-nav__text:hover {
+  color: var(--active-text);
+}
+
 .todo-nav__text--left {
   margin: 0 auto 0 0;
 }

@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import useLocalStorage from 'use-local-storage';
 import AppUI from './AppUI';
 
+//TODO: chequear background
+
 // const defaultTodos: { text: string; completed: boolean }[] = [
 //   {
 //     text: 'Cortar cebolla',
@@ -42,6 +44,12 @@ const App = (): JSX.Element => {
     newTodos[todoIndex].completed = !newTodos[todoIndex].completed;
     setTodos(newTodos);
   };
+  const filterCompletedTodos = (
+    todos: { text: string; completed: boolean }[]
+  ) =>
+    todos.filter((todo) => {
+      if (!todo.completed) return todo;
+    });
 
   return (
     <AppUI
@@ -56,6 +64,7 @@ const App = (): JSX.Element => {
       todos={todos}
       setTodos={setTodos}
       setNewTodoText={setNewTodoText}
+      filterCompletedTodos={filterCompletedTodos}
     />
   );
 };

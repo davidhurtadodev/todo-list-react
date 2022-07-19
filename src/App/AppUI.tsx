@@ -20,6 +20,7 @@ type AppUIProps = {
   displayedTodos: string;
   uncompletedTodos: number;
   setDisplayedTodos: any;
+  filterCompletedTodos: any;
 };
 
 const AppUI = ({
@@ -34,6 +35,7 @@ const AppUI = ({
   uncompletedTodos,
   setDisplayedTodos,
   completedTodos,
+  filterCompletedTodos,
 }: AppUIProps): JSX.Element => {
   return (
     <div className="App" data-theme={theme}>
@@ -49,6 +51,8 @@ const AppUI = ({
           todos={todos}
           completeTodos={completeTodos}
           displayedTodos={displayedTodos}
+          filterCompletedTodos={filterCompletedTodos}
+          setTodos={setTodos}
         />
         <TodoListStatus
           uncompletedTodos={uncompletedTodos}
@@ -56,6 +60,7 @@ const AppUI = ({
           todos={todos}
           setTodos={setTodos}
           displayedTodos={displayedTodos}
+          filterCompletedTodos={filterCompletedTodos}
         />
         <TodoListDisplayOptions
           responsiveClass="hide-desktop"

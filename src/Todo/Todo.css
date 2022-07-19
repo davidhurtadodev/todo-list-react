@@ -4,14 +4,29 @@
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
   cursor: pointer;
+  display: flex;
 }
 .todo__text {
   color: var(--accent-text);
   margin-top: 3px;
-  margin-left: 12px;
+  margin-left: 18px;
   font-size: 18px;
 }
 .todo__text--completed {
   text-decoration: line-through;
   color: var(--inactive-text);
+}
+.todo__left-wrapper {
+  display: flex;
+}
+.todo__right-wrapper {
+  display: flex;
+  align-items: center;
+  margin: 0 0 0 auto;
+}
+.todo__cross {
+  visibility: hidden;
+}
+.todo:hover .todo__cross {
+  visibility: visible;
 }
