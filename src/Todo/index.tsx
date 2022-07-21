@@ -6,10 +6,12 @@ import crossIcon from '../assets/icons/icon-cross.svg';
 type todoProps = {
   completed: boolean;
   text: string;
-  completeTodos: any;
-  filterCompletedTodos: any;
-  todos: any;
-  setTodos: any;
+  todos: { text: string; completed: boolean }[];
+  setTodos: (todos: { text: string; completed: boolean }[]) => void;
+  completeTodos: (text: string) => void;
+  filterCompletedTodos: (
+    todos: { text: string; completed: boolean }[]
+  ) => { text: string; completed: boolean }[];
 };
 
 const Todo = ({

@@ -5,22 +5,22 @@ import MainWrapper from '../MainWrapper';
 import CreateTodo from '../CreateTodo';
 import TodoList from '../TodoList';
 import TodoListStatus from '../TodoListStatus';
-import TodoNavMobile from '../TodoNavMobile';
 import TodoListDisplayOptions from '../TodoListDisplayOptions';
 
 type AppUIProps = {
   theme: string;
-  setTheme: any;
-  completedTodos: number;
-  newTodoText: any;
-  setNewTodoText: any;
+  setTheme: (theme: string) => void;
+  newTodoText: string;
+  setNewTodoText: (text: string) => void;
   todos: { text: string; completed: boolean }[];
-  setTodos: any;
-  completeTodos: any;
+  setTodos: (todos: { text: string; completed: boolean }[]) => void;
+  completeTodos: (text: string) => void;
   displayedTodos: string;
   uncompletedTodos: number;
   setDisplayedTodos: any;
-  filterCompletedTodos: any;
+  filterCompletedTodos: (
+    todos: { text: string; completed: boolean }[]
+  ) => { text: string; completed: boolean }[];
 };
 
 const AppUI = ({
@@ -34,7 +34,7 @@ const AppUI = ({
   displayedTodos,
   uncompletedTodos,
   setDisplayedTodos,
-  completedTodos,
+
   filterCompletedTodos,
 }: AppUIProps): JSX.Element => {
   return (

@@ -2,10 +2,15 @@ import React from 'react';
 import Todo from '../Todo/index';
 import './TodoList.css';
 
-// type todosProps = {
-//   todos: []
-
-// }
+type TodoListProps = {
+  todos: { text: string; completed: boolean }[];
+  setTodos: (todos: { text: string; completed: boolean }[]) => void;
+  completeTodos: (text: string) => void;
+  displayedTodos: string;
+  filterCompletedTodos: (
+    todos: { text: string; completed: boolean }[]
+  ) => { text: string; completed: boolean }[];
+};
 
 const TodoList = ({
   todos,
@@ -13,7 +18,7 @@ const TodoList = ({
   displayedTodos,
   filterCompletedTodos,
   setTodos,
-}: any): JSX.Element => {
+}: TodoListProps): JSX.Element => {
   const filteredTodos = todos.filter((todo: any) => {
     if (todo.completed === false && displayedTodos === 'Active') return todo;
     else if (todo.completed === true && displayedTodos === 'Complete')

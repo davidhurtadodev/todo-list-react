@@ -2,23 +2,6 @@ import React, { useState } from 'react';
 import useLocalStorage from 'use-local-storage';
 import AppUI from './AppUI';
 
-//TODO: chequear background
-
-// const defaultTodos: { text: string; completed: boolean }[] = [
-//   {
-//     text: 'Cortar cebolla',
-//     completed: false,
-//   },
-//   {
-//     text: 'Dormir',
-//     completed: false,
-//   },
-//   {
-//     text: 'Volar',
-//     completed: false,
-//   },
-// ];
-
 const App = (): JSX.Element => {
   const defaultDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
   const [theme, setTheme] = useLocalStorage(
@@ -58,7 +41,6 @@ const App = (): JSX.Element => {
       newTodoText={newTodoText}
       displayedTodos={displayedTodos}
       setDisplayedTodos={setDisplayedTodos}
-      completedTodos={completedTodos}
       uncompletedTodos={uncompletedTodos}
       completeTodos={completeTodos}
       todos={todos}

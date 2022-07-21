@@ -5,7 +5,7 @@ import sunIcon from '../assets/icons/icon-sun.svg';
 
 type ModeTogglerProps = {
   theme: string;
-  setTheme: any;
+  setTheme: (theme: string) => void;
 };
 
 const ModeToggler = ({ theme, setTheme }: ModeTogglerProps): JSX.Element => {

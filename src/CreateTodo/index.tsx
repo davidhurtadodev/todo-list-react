@@ -4,9 +4,9 @@ import './CreateTodo.css';
 
 type CreateTodoProps = {
   newTodoText: string;
-  setNewTodoText: any;
+  setNewTodoText: (text: string) => void;
   todos: { text: string; completed: boolean }[];
-  setTodos: any;
+  setTodos: (todos: { text: string; completed: boolean }[]) => void;
 };
 
 const CreateTodo = ({
