@@ -16,7 +16,7 @@ const CreateTodo = ({
   setTodos,
 }: CreateTodoProps): JSX.Element => {
   const handleEnterPress = (e: any): void => {
-    if (e.code === 'Enter') {
+    if (e.charCode === 13) {
       e.preventDefault();
       const newTodo = {
         text: newTodoText,
@@ -32,7 +32,7 @@ const CreateTodo = ({
       <span className="container__check-circle container__check-circle--create">
         <img src={checkSvg} className="check-circle__check" alt="" />
       </span>
-      <form action="">
+      <form className="create-todo__form">
         <input
           type="text"
           className="container__text--create container__text input--create"

@@ -8,6 +8,7 @@
   font-size: 18px;
   border: 0;
   background-color: var(--todo-background);
+  width: 100%;
 }
 .input--create:focus {
   outline: 0;
@@ -19,4 +20,7 @@
 }
 .container__check-circle--create {
   visibility: hidden;
+}
+.create-todo__form {
+  width: 100%;
 }
