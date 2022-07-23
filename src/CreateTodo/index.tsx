@@ -40,6 +40,7 @@ const CreateTodo = ({
           onChange={(e) => setNewTodoText(e.target.value)}
           value={newTodoText}
           onKeyPress={(e) => handleEnterPress(e)}
+          onKeyUp={(e) => handleEnterPress(e)}
         />
       </form>
     </div>
