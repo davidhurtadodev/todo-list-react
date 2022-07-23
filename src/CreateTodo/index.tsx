@@ -27,20 +27,30 @@ const CreateTodo = ({
       setNewTodoText('');
     }
   };
+  const handleOnSubmit = (e: any): void => {
+    e.preventDefault();
+    const newTodo = {
+      text: newTodoText,
+      completed: false,
+    };
+    const newTodos = [...todos, newTodo];
+    setTodos(newTodos);
+    setNewTodoText('');
+  };
   return (
     <div className="container container--create create-todo">
       <span className="container__check-circle container__check-circle--create">
         <img src={checkSvg} className="check-circle__check" alt="" />
       </span>
-      <form className="create-todo__form">
+      <form onSubmit={(e) => handleOnSubmit(e)} className="create-todo__form">
         <input
           type="text"
           className="container__text--create container__text input--create"
           placeholder="Create a new todo..."
           onChange={(e) => setNewTodoText(e.target.value)}
           value={newTodoText}
-          onKeyPress={(e) => handleEnterPress(e)}
-          onKeyUp={(e) => handleEnterPress(e)}
+          // onKeyPress={(e) => handleEnterPress(e)}
+          // onKeyUp={(e) => handleEnterPress(e)}
         />
       </form>
     </div>
