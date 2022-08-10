@@ -9,16 +9,13 @@ type todoProps = {
   todos: { text: string; completed: boolean }[];
   setTodos: (todos: { text: string; completed: boolean }[]) => void;
   completeTodos: (text: string) => void;
-  filterCompletedTodos: (
-    todos: { text: string; completed: boolean }[]
-  ) => { text: string; completed: boolean }[];
 };
 
 const Todo = ({
   completed,
   text,
   completeTodos,
-  filterCompletedTodos,
+
   todos,
   setTodos,
 }: todoProps): JSX.Element => {
@@ -27,13 +24,6 @@ const Todo = ({
       if (todo.text !== text) return true;
     });
     setTodos(undeletedTodos);
-    // if (!completed) {
-    //
-
-    //   })
-    //   // completeTodos(text);
-    //   // setTodos(filterCompletedTodos(todos));
-    // } else setTodos(filterCompletedTodos(todos));
   };
 
   return (
