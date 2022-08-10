@@ -23,11 +23,19 @@ const Todo = ({
   setTodos,
 }: todoProps): JSX.Element => {
   const handleCrossClick = () => {
-    if (!completed) {
-      completeTodos(text);
-      setTodos(filterCompletedTodos(todos));
-    } else setTodos(filterCompletedTodos(todos));
+    const undeletedTodos = todos.filter((todo) => {
+      if (todo.text !== text) return true;
+    });
+    setTodos(undeletedTodos);
+    // if (!completed) {
+    //
+
+    //   })
+    //   // completeTodos(text);
+    //   // setTodos(filterCompletedTodos(todos));
+    // } else setTodos(filterCompletedTodos(todos));
   };
+
   return (
     <div className="container todo">
       <div className="todo__left-wrapper">
